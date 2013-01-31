@@ -1,4 +1,4 @@
-prettyScroll
+prettyScroll [(Demo page)](http://www.trialine.lv/prettyScroll/demo.html)
 ============
 jquery.prettyScroll.js is a jQuery plugin, which implements pretty page scrolling to HTML anchor (`<a name="..."></a>`).
 
@@ -52,7 +52,3 @@ $.prettyScroll({
 
 * **adaptive** - if adaptive true, animation speed calculates by `speed = <pixels_to_object> / 4000 * speed`;
 * **animation** - animation type. Supports swing / linear;
-
-
-[Demo page](http://www.trialine.lv/prettyScroll/demo.html)
-=======
