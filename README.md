@@ -9,16 +9,16 @@ jquery.prettyScroll.js is a jQuery plugin, which implements pretty page scrollin
 ## Usage
 1. Include into page jQuery and prettyScroll files like this:
 
-`<script type="text/javascript" src="js/jquery.js"></script>
+`<script type="text/javascript" src="js/jquery.js"></script>`
 
-<script type="text/javascript" src="js/jquery.prettyScroll.js"></script>`
+`<script type="text/javascript" src="js/jquery.prettyScroll.js"></script>`
 
 2. Simply call prettyScroll function, for example:
-`        <script type="text/javascript">
-            $(function() {
-                $.prettyScroll();
-            });
-        </script>`
+`        <script type="text/javascript">`
+`            $(function() {`
+`                $.prettyScroll();`
+`            });`
+`        </script>`
 
 3. If all are right, now your standart anchor jumps will be animated by scrolling.
 
@@ -28,20 +28,15 @@ jquery.prettyScroll.js is a jQuery plugin, which implements pretty page scrollin
 
 * exclude: {} - basically, plugin works on all links with anchors in page. If you need stay some links standart anchor behavior you can do this by pass parametrs to *exclude* option:
 
-`
-$.prettyScroll({
-    exclude: 'a.no_scroll'
-});
-`
+`$.prettyScroll({`
+`    exclude: 'a.no_scroll'`
+`});`
 
 or
 
-`
-$.prettyScroll({
-
-    exclude: $('a.no_scroll, a.no_class')
-
-});
+`$.prettyScroll({`
+`    exclude: $('a.no_scroll, a.no_class')`
+`});`
 `
 
 * adaptive: true - if adaptive true, animation speed calculates by `speed = <pixels_to_object> / 4000 * speed`;
