@@ -44,3 +44,5 @@ $.prettyScroll({
 
 ## Demo
 [Demo page](http://www.trialine.lv/prettyScroll/demo.html)
+=======
+jQuery plugin, hat implements the smooth scroll to HTML anchor
