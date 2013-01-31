@@ -8,7 +8,6 @@ jquery.prettyScroll.js is a jQuery plugin, which implements pretty page scrollin
 
 ## Usage
 1. Include into page jQuery and prettyScroll files like this:
-
 ```html
 <script type="text/javascript" src="js/jquery.js"></script>`
 <script type="text/javascript" src="js/jquery.prettyScroll.js"></script>
@@ -27,35 +26,35 @@ jquery.prettyScroll.js is a jQuery plugin, which implements pretty page scrollin
 
 ## Parameters:
 #### By default:
-`$.prettyScroll({`
-`        speed: '2000',`
-`        exclude: {},`
-`        adaptive: true,`
-`        animation: 'swing'`
-`});`
+```javascript
+$.prettyScroll({
+        speed: '2000',
+        exclude: {},
+        adaptive: true,
+        animation: 'swing'
+});
+```
 
-* speed - animation speed;
+* **speed** - animation speed;
+* **exclude** - basically, plugin works on all links with anchors in page. If you need stay some links standart anchor behavior you can do this by pass parametrs to *exclude* option:
 
-* exclude - basically, plugin works on all links with anchors in page. If you need stay some links standart anchor behavior you can do this by pass parametrs to *exclude* option:
-
-`$.prettyScroll({`
-
-`    exclude: 'a.no_scroll'`
-
-`});`
+```javascript
+$.prettyScroll({
+    exclude: 'a.no_scroll'
+});
 
 or
 
-`$.prettyScroll({`
+```javascript
+$.prettyScroll({
+    exclude: $('a.no_scroll, a.no_class')
+});
+```
 
-`    exclude: $('a.no_scroll, a.no_class')`
 
-`});`
+* **adaptive** - if adaptive true, animation speed calculates by `speed = <pixels_to_object> / 4000 * speed`;
 
-
-* adaptive - if adaptive true, animation speed calculates by `speed = <pixels_to_object> / 4000 * speed`;
-
-* animation - animation type. Supports swing / linear;
+* **animation** - animation type. Supports swing / linear;
 
 
 [Demo page](http://www.trialine.lv/prettyScroll/demo.html)
