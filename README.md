@@ -15,11 +15,9 @@ jquery.prettyScroll.js is a jQuery plugin, which implements pretty page scrollin
 
 2. Simply call prettyScroll function, for example:
 ```javascript
-        <script type="text/javascript">
-            $(function() {
-                $.prettyScroll();
-            });
-        </script>
+    $(function() {
+        $.prettyScroll();
+    });
 ```
 
 3. If all are right, now your standart anchor jumps will be animated by scrolling.
@@ -42,6 +40,7 @@ $.prettyScroll({
 $.prettyScroll({
     exclude: 'a.no_scroll'
 });
+```
 
 or
 
@@ -51,9 +50,7 @@ $.prettyScroll({
 });
 ```
 
-
 * **adaptive** - if adaptive true, animation speed calculates by `speed = <pixels_to_object> / 4000 * speed`;
-
 * **animation** - animation type. Supports swing / linear;
 
 
