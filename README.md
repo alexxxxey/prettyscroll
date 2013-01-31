@@ -27,11 +27,18 @@ jquery.prettyScroll.js is a jQuery plugin, which implements pretty page scrollin
 
 3. If all are right, now your standart anchor jumps will be animated by scrolling.
 
-## Features
-###Parameters by default:
-* speed: '2000' - animation speed;
+## Parameters:
+#### By default:
+`$.prettyScroll({`
+`        speed: '2000',`
+`        exclude: {},`
+`        adaptive: true,`
+`        animation: 'swing'`
+`});`
 
-* exclude: {} - basically, plugin works on all links with anchors in page. If you need stay some links standart anchor behavior you can do this by pass parametrs to *exclude* option:
+* speed - animation speed;
+
+* exclude - basically, plugin works on all links with anchors in page. If you need stay some links standart anchor behavior you can do this by pass parametrs to *exclude* option:
 
 `$.prettyScroll({`
 
@@ -48,9 +55,9 @@ or
 `});`
 
 
-* adaptive: true - if adaptive true, animation speed calculates by `speed = <pixels_to_object> / 4000 * speed`;
+* adaptive - if adaptive true, animation speed calculates by `speed = <pixels_to_object> / 4000 * speed`;
 
-* animation: swing - animation type. Supports swing / linear;
+* animation - animation type. Supports swing / linear;
 
 
 [Demo page](http://www.trialine.lv/prettyScroll/demo.html)
