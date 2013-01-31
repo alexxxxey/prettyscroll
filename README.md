@@ -1,4 +1,4 @@
-prettyscroll
+prettyScroll
 ============
 
-Jquery plugin, hat implements the smooth scroll to HTML anchor
+jQuery plugin, hat implements the smooth scroll to HTML anchor
