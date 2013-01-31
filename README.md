@@ -38,7 +38,9 @@ or
 
 `
 $.prettyScroll({
+
     exclude: $('a.no_scroll, a.no_class')
+
 });
 `
 
