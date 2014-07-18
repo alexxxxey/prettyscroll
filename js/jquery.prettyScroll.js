@@ -17,27 +17,13 @@
         options = $.extend({}, defaults, params);
 
         if(window.location.hash) {
-            elem_to = $('[name="'+window.location.hash.replace('#', '')+'"]').not(options.exclude);
+            toscroll_obj = _getToScrollObj(window.location.hash.replace('#', ''));
 
-            if(elem_to.length>0) {
-                orig_elem_to_name = elem_to.attr('name')
+            if(toscroll_obj.length>0) {
+                orig_hash = window.location.hash;
+                window.location.hash = "";
+                _prettyScroll(toscroll_obj, false, function() { window.location.hash = orig_hash; } );
 
-                // save real anchor name
-                elem_to.data('orig_name', orig_elem_to_name );
-
-                // change name to avoid anchor standart jump
-                elem_to.attr('name', '_'+orig_elem_to_name );
-
-                $(window).load(function() {
-                    _prettyScroll(
-                        elem_to,
-                        false,
-                        function() {
-                            // change to real anchor name
-                            elem_to.attr('name', elem_to.data('orig_name') );
-                        }
-                    );
-                });
             }
         }
 
@@ -47,17 +33,33 @@
             future_href = elem_from[0].href.split("#");
             current_href = $(location).attr('href').split("#");
 
-            if(current_href[0] == future_href[0]) {
+
+            toscroll_obj = _getToScrollObj(future_href[1]);
+
+            if(current_href[0] == future_href[0] && toscroll_obj.length > 0 ) {
+
                 _prettyScroll(
-                    $('a[name='+future_href[1]+']'),
+                    toscroll_obj,
                     elem_from,
                     function() { window.location.hash=future_href[1]; }
                  );
+
                 e.preventDefault();
             }
         });
 
 
+        function _getToScrollObj(anchor) {
+            if(anchor.length>0) {
+
+                toscroll_obj = $('[name="'+anchor+'"], [id="'+anchor+'"]').not(options.exclude);
+                if(toscroll_obj.length>0) {
+                    return toscroll_obj;
+                }
+            }
+
+            return false;
+        };
 
         function _prettyScroll(elem_to, elem_from, callback) {
                 pixels = elem_to.offset().top;
@@ -74,7 +76,9 @@
                 $('html, body').animate({
                     scrollTop: pixels
                 }, speed, options.animation, callback);
-        }
+        };
+
         return this;
     };
+
 })(jQuery);
