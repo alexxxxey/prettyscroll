@@ -1,4 +1,4 @@
-(function($) {
+$(function() {
     var defaults = {
         speed: '2000',
         exclude: {},
@@ -81,4 +81,4 @@
         return this;
     };
 
-})(jQuery);
+});
