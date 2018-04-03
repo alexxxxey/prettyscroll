@@ -3,7 +3,8 @@ $(function() {
         speed: '2000',
         exclude: {},
         adaptive: true,
-        animation: 'swing' // swing or linear defaults
+        animation: 'swing',
+        offset: 0
     };
 
     var options;
@@ -64,6 +65,7 @@ $(function() {
         function _prettyScroll(elem_to, elem_from, callback) {
                 pixels = elem_to.offset().top;
                 speed = options.speed;
+                offset = options.offset;
 
                 if(pixels > $(document).height() - window.innerHeight) pixels = $(document).height() - window.innerHeight;
 
@@ -74,9 +76,10 @@ $(function() {
 
 
                 $('html, body').animate({
-                    scrollTop: pixels
+                    scrollTop: pixels - offset
                 }, speed, options.animation, callback);
         };
+
 
         return this;
     };
